@@ -138,20 +138,22 @@ export function CoursesList() {
                   </CardContent>
                 </div>
 
-                <div className="flex flex-row items-center gap-6 border-t border-border bg-secondary/50 p-6 lg:w-64 lg:flex-col lg:justify-center lg:border-l lg:border-t-0">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Clock className="h-4 w-4" />
-                    <span>{course.duration}</span>
+                <div className="flex flex-col gap-4 border-t border-border bg-secondary/50 p-6 lg:w-64 lg:justify-center lg:border-l lg:border-t-0">
+                  <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Clock className="h-4 w-4 shrink-0" />
+                      <span>{course.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <BookOpen className="h-4 w-4 shrink-0" />
+                      <span>{course.modules} Modules</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Users className="h-4 w-4 shrink-0" />
+                      <span>{course.projects} Projects</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <BookOpen className="h-4 w-4" />
-                    <span>{course.modules} Modules</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Users className="h-4 w-4" />
-                    <span>{course.projects} Projects</span>
-                  </div>
-                  <Button asChild className="mt-2 w-full gap-2">
+                  <Button asChild className="w-full gap-2">
                     <a href={`${WHATSAPP_BASE_URL}${encodeURIComponent(`Hi SCL Academy, I am interested in the ${course.title} course. Please share more details.`)}`} target="_blank" rel="noopener noreferrer">
                       Enroll <ArrowRight className="h-4 w-4" />
                     </a>
